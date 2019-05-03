@@ -51,7 +51,7 @@ http://webpac.tphcc.gov.tw/toread/opac/search?q=app&max=&view=CONTENT&location=
 
 ![](https://i.imgur.com/2BGsE0Z.png)
 
-竟然有附上這本書的URL，那事情就好辦多了，我們只要先取的書單，並且儲存起來等待client需要某本書再去搜尋就好了。既然現在有架構了，就來撰寫程式吧 !
+竟然有附上這本書的URL，那事情就好辦多了，我們只要先取得書單，並且儲存起來等待client需要某本書再去搜尋就好了。既然現在有架構了，就來撰寫程式吧 !
 
 ## Programming
 
