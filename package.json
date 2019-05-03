@@ -1,0 +1,16 @@
+{
+  "name": "xinpei_books",
+  "version": "1.0.0",
+  "description": "",
+  "main": "book_detail.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+   "dependencies": {
+    "cheerio": "latest",
+    "request": "latest",
+    "request-promise": "latest"
+  },
+  "author": "",
+  "license": "ISC"
+}
