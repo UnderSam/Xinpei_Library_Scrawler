@@ -96,7 +96,9 @@ http://webpac.tphcc.gov.tw/toread/opac/search?
 uri為我們的搜尋basis-url，而qs就是queryString，我們要從之前的那張圖片照著格式放進來，timeout為過幾秒後reject，而header為向server表明user-agent的身分(不然有些會擋掉無user-agent的爬蟲)，最後由transform將response直接轉成cheerio的格式。
 
 接下來就專注在把拿到的html弄成我們要的資訊，我們繼續觀察原始碼
+
 ![](https://i.imgur.com/Kxb3Mow.png)
+
 每一本書都用class(is_img)來隔開，那要取得每個is_img底下的資料我們可以使用jquery的filter，如下
 ```
 $(".is_img").filter(function(){
@@ -106,14 +108,18 @@ $(".is_img").filter(function(){
 })
 ```
 那抓到了每本書的Parent後，我們現在就要來找我們要的資訊放在哪個Children，繼續打開母TAG後會得到
+
 ![](https://i.imgur.com/CDpmBIZ.png)
+
 這邊直接幫大家整理 : 
 1. 標題 : 放在reslt_item_head底下
 2. 作者 : 放在crs_author底下
 3. 連結 : 放在reslt_item_head底下的a的href屬性
 4. 圖片 : img tag的src屬性
 5. 館藏 : 這邊看到第一本書的館藏在id['MyPageLink_4']底下，可是寫完去跑又發現其他本書都沒有資料，這時候打開其他本的也一起比較
+
 ![](https://i.imgur.com/z6L3WSz.png)
+
 原來後面還有_+number，這邊我們就用迴圈一起來處理，第n本書就append n-1到id後面去抓資料
 
 現在tag也有了，我們直接來寫剩下的邏輯部分 : 
