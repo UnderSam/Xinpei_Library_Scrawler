@@ -1,7 +1,5 @@
 # Basic Web Scrawler With Javascript
 
-Github Repository : 
-
 ## Require skill
 1. Javascript
 2. HTML DOM
