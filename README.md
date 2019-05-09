@@ -69,7 +69,7 @@ http://webpac.tphcc.gov.tw/toread/opac/search?q=app&max=&view=CONTENT&location=
 http://webpac.tphcc.gov.tw/toread/opac/search?
 ```
 從request-promise的document中可以得到，用法是先宣告一個options，裡面先放入url,qs,header...等資訊，塞入後會變成這樣
-```
+```javascript
 	var options = {
 			    uri: 'http://webpac.tphcc.gov.tw/toread/opac/search?',
 			    qs: {
@@ -121,7 +121,7 @@ $(".is_img").filter(function(){
 原來後面還有_+number，這邊我們就用迴圈一起來處理，第n本書就append n-1到id後面去抓資料
 
 現在tag也有了，我們直接來寫剩下的邏輯部分 : 
-```
+```javascript
 const pr = rp(options)
 	.then(function($){
 		clearInterval(interval);
@@ -164,13 +164,13 @@ const pr = rp(options)
 	})
 ```
 最後，再return我們的request-promise
-```
+```javascript
 return Promise.all([pr]).then(()=>{
 		console.log(counter); //show books count
 	})
 ```
 全部兜在一起之後會變成
-```
+```javascript
 function Xinpei_url(searchkey){
 	console.log("start xinpei url")
 	var counter = 0;
@@ -247,7 +247,7 @@ function Xinpei_url(searchkey){
 }
 ```
 接下來執行這個function，並且帶入app這個關鍵字，會跑出結果 : 
-```
+```javascript
 start xinpei url
 Waiting: 1.007
 Waiting: 2.007
